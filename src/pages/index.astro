@@ -1,15 +1,18 @@
 ---
+import CallToAction1 from "@components/call-to-action/CallToAction1.astro";
+import Container from "@components/containers/Container.astro";
+import Features1 from "@components/features-sections/Features1.astro";
+import Layout from "@layouts/Layout.astro";
+import HeroSection1 from "@components/HeroSection1.astro"
+import Services1 from "@components/services-sections/Services1.astro";
+
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+<Container>
+    <HeroSection1/>
+    <Services1/>
+    <Features1/>
+    <CallToAction1/>
+</Container>
+</Layout>

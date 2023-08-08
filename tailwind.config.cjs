@@ -2,25 +2,254 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  theme: {
-    extend: {
-      colors: {
-        customPrimary: "rgb(99, 102, 241)",
-        customSecondary: "rgb(161, 163, 247)",
-        customDarkBg1: "rgb(31, 32, 35)",
-        customDarkBg2: "rgb(38, 39, 43)",
-        customDarkBg3: "rgb(48, 49, 54)",
-        customDarkBg3Hover: "rgb(55, 56, 62)",
-        customContentSubtitle: "rgb(178, 184, 205)",
-        customGrayBorder: "rgb(255,255,255,0.1)",
-        customGrayText: "rgb(174, 178, 183)",
-        customDarkBgTransparent: "rgb(31, 32, 35, 0.7)",
-        customDarkBgTransparentDarker: "rgb(0,0,0,0.5)",
-        customDarkBgTransparentLighter: "rgb(48, 49, 54, 0.7)"  
-      },
+  darkMode:"class",
+	theme: {
+		extend: {
+			boxShadow: {
+				xs: "0px 1px 1px rgba(24, 24, 27, 0.06), 0px 0px 0px rgba(24, 24, 27, 0.08), 0px 0px 0px rgba(24, 24, 27, 0.08)",
+				sm: "0px 2px 1px rgba(24, 24, 27, 0.01), 0px 1px 1px rgba(24, 24, 27, 0.05), 0px 1px 1px rgba(24, 24, 27, 0.09), 0px 0px 0px rgba(24, 24, 27, 0.1), 0px 0px 0px rgba(24, 24, 27, 0.1);",
+				md: "0px 5px 2px rgba(24, 24, 27, 0.03), 0px 3px 2px rgba(24, 24, 27, 0.1), 0px 1px 1px rgba(24, 24, 27, 0.17), 0px 0px 1px rgba(24, 24, 27, 0.2), 0px 0px 0px rgba(24, 24, 27, 0.2);",
+				lg: "0px 25px 7px rgba(24, 24, 27, 0.01), 0px 16px 6px rgba(24, 24, 27, 0.04), 0px 9px 5px rgba(24, 24, 27, 0.15), 0px 4px 4px rgba(24, 24, 27, 0.26), 0px 1px 2px rgba(24, 24, 27, 0.29), 0px 0px 0px rgba(24, 24, 27, 0.3);",
+			},
+			animation: {
+				blob: 'blob 10s infinite',
+				border: 'background ease infinite',
+			},
+			keyframes: {
+				background: {
+					'0%, 100%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+				},
+				blob: {
+				  '0%, 100%': {
+					transform: 'translate(0, 0) scale(1)',
+				  },
+				  '25%': {
+					transform: 'translate(20px, -50px) scale(1.1)',
+				  },
+				  '50%': {
+					transform: 'translate(0, 20px) scale(1)',
+				  },
+				  '75%': {
+					transform: 'translate(-20px, -15px) scale(0.9)',
+				  },
+				},
+				
+			  },
       fontFamily: {
         sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+				transparent: 'transparent',
+				blacks: {
+					50: "#E6E6E6",
+					100: "#CCCCCC",
+					200: "#999999",
+					300: "#666666",
+					400: "#333333",
+					500: "#000000",
+					600: "#000000",
+					700: "#000000",
+					800: "#000000",
+					900: "#000000",
+					950: "#000000"
+				  },
+				whites: {
+					50: "#FCFCFC",
+					100: "#FCFCFC",
+					200: "#FCFCFC",
+					300: "#FCFCFC",
+					400: "#FCFCFC",
+					500: "#FCFCFC",
+					600: "#FCFCFC",
+					700: "#FFFFFF",
+					800: "#D6D6D6",
+					900: "#9C9C9C",
+					950: "#737373"
+				  },
+				blues: {
+					50: "#DCDFFF",
+					100: "#B3B9FE",
+					200: "#6774FE",
+					300: "#1B2EFD",
+					400: "#0212CA",
+					500: "#010C80",
+					600: "#010965",
+					700: "#01074C",
+					800: "#000533",
+					900: "#000219",
+					950: "#00010F"
+				  },
+				yellows: {
+					50: "#FFFDF0",
+					100: "#FFFBE0",
+					200: "#FFF7C2",
+					300: "#FFF3A3",
+					400: "#FFEE80",
+					500: "#FFE957",
+					600: "#FFE229",
+					700: "#FFDC00",
+					800: "#D1B500",
+					900: "#998500",
+					950: "#706100"
+				  },
+				grays: {
+					50: "#F0F0F0",
+					100: "#E0E0E0",
+					200: "#BFBFBF",
+					300: "#A1A1A1",
+					400: "#808080",
+					500: "#616161",
+					600: "#404040",
+					700: "#212121",
+					800: "#171717",
+					900: "#0A0A0A",
+					950: "#050505"
+				  },
+				oranges: {
+					50: "#FEF8F1",
+					100: "#FDEEDD",
+					200: "#FBDDBB",
+					300: "#FACF9E",
+					400: "#F8BE7D",
+					500: "#F6AD5B",
+					600: "#F49D39",
+					700: "#F28C18",
+					800: "#A95F0A",
+					900: "#522E05",
+					950: "#2B1802"
+				  },
+				purples: {
+					50: "#EEEBFA",
+					100: "#DAD2F4",
+					200: "#B9AAE9",
+					300: "#947DDE",
+					400: "#7255D3",
+					500: "#5231BF",
+					600: "#3F2692",
+					700: "#2D1B69",
+					800: "#1E1245",
+					900: "#100925",
+					950: "#070410"
+				  },
+				pinks: {
+					50: "#FFEBFA",
+					100: "#FFD6F5",
+					200: "#FFB3ED",
+					300: "#FF8AE4",
+					400: "#FF66DB",
+					500: "#FF3DD2",
+					600: "#FF1AC9",
+					700: "#F000B8",
+					800: "#9E0079",
+					900: "#52003F",
+					950: "#29001F"
+				  },
+				azures: {
+					50: "#F3FCFB",
+					100: "#E2F8F6",
+					200: "#C6F1EC",
+					300: "#A9EAE3",
+					400: "#8DE2DA",
+					500: "#70DBD1",
+					600: "#54D4C7",
+					700: "#37CDBE",
+					800: "#238B80",
+					900: "#114540",
+					950: "#092522"
+				  },
+				darks: {
+					50: "#EDEFF2",
+					100: "#DEE1E8",
+					200: "#BAC1CF",
+					300: "#99A3B8",
+					400: "#75839E",
+					500: "#5A6781",
+					600: "#414A5D",
+					700: "#2A303C",
+					800: "#1B1F27",
+					900: "#0F1115",
+					950: "#060709"
+				  },
+				greens: {
+					50: "#F2FFE5",
+					100: "#E5FFCC",
+					200: "#CDFF9E",
+					300: "#B3FF6B",
+					400: "#9BFF3D",
+					500: "#81FF0A",
+					600: "#68D600",
+					700: "#51A800",
+					800: "#367000",
+					900: "#1B3800",
+					950: "#0C1900"
+				  },
+				darkreds: {
+					50: "#FFE5E5",
+					100: "#FFCCCC",
+					200: "#FF9494",
+					300: "#FF6161",
+					400: "#FF2929",
+					500: "#F50000",
+					600: "#C20000",
+					700: "#8B0000",
+					800: "#5C0000",
+					900: "#2E0000",
+					950: "#190000"
+				  },
+				skys: {
+					50: "#F0FAFE",
+					100: "#E1F5FE",
+					200: "#C4ECFD",
+					300: "#ABE4FC",
+					400: "#8EDAFB",
+					500: "#70D1FA",
+					600: "#53C7F9",
+					700: "#38BDF8",
+					800: "#078CC5",
+					900: "#034663",
+					950: "#022331"
+				  },
+				night: {
+					50: "#E8EDF7",
+					100: "#CED8EE",
+					200: "#A1B3DD",
+					300: "#708CCC",
+					400: "#4265B8",
+					500: "#324C8B",
+					600: "#20325A",
+					700: "#0F172A",
+					800: "#090E1A",
+					900: "#05080F",
+					950: "#030408"
+				  },
+				hovers: {
+					50: "#FDFAFF",
+					100: "#FBF6FE",
+					200: "#F8ECFD",
+					300: "#F6E8FD",
+					400: "#F2DFFC",
+					500: "#EFD5FB",
+					600: "#EBCCFA",
+					700: "#E8C4F9",
+					800: "#B43DEB",
+					900: "#600E86",
+					950: "#320745"
+				  },
+				reds: {
+					50: "#FDF2F2",
+					100: "#F9E1E1",
+					200: "#F4C3C3",
+					300: "#EFA9A9",
+					400: "#E98B8B",
+					500: "#E36D6D",
+					600: "#DD4F4F",
+					700: "#D83333",
+					800: "#961D1D",
+					900: "#490E0E",
+					950: "#270707"
+				  },
+			},
       screens: {
         xs: "530px",
         sm: "640px",
